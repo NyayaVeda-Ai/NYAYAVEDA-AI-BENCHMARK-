@@ -1,0 +1,171 @@
+{
+  "answered_or_declined_by_area": {
+    "bns_transition": {
+      "delivered": 99,
+      "timed_out": 1
+    },
+    "fabricated_citations": {
+      "delivered": 54,
+      "refused": 46
+    },
+    "hindi_hinglish": {
+      "delivered": 99,
+      "refused": 1
+    },
+    "negative_treatment": {
+      "delivered": 77,
+      "refused": 23
+    },
+    "personal_data": {
+      "delivered": 95,
+      "refused": 5
+    },
+    "split_bench": {
+      "delivered": 64,
+      "refused": 36
+    }
+  },
+  "answers": 600,
+  "end_to_end_latency_s": {
+    "p50": 32.0,
+    "p95": 50.4
+  },
+  "how_verdicts_were_read": "Each verdict is read by an automated reader that quotes the answer, and code then checks that every quote occurs in the answer and names the judgment or provision concerned. Both readers were validated against hand-read samples before use. Citation precision is counted by code, without a reader.",
+  "kpis": [
+    {
+      "ci95": [
+        0.8601811362815259,
+        0.891826000203755
+      ],
+      "definition": "Of the citations (precedents and provisions) in delivered answers that could be checked against the sources the answer was written from, the share found in those sources. Trap questions and drafts are excluded. A real authority cited from memory, absent from the sources, counts as a miss, so the error of this measure is downward.",
+      "estimator": "ratio",
+      "excluded": {
+        "answers_with_nothing_checkable": 0,
+        "delivered_without_captured_counters": 0,
+        "drafts": 99,
+        "trap_questions": 54
+      },
+      "k": 1964,
+      "kpi": "citation_precision",
+      "n": 2242,
+      "population": "2242 checkable citations in 335 answers",
+      "title": "Citations grounded in the sources given",
+      "value": 0.8760035682426405
+    },
+    {
+      "ci95": [
+        0.7786281178903616,
+        0.9147365634006086
+      ],
+      "definition": "For an offence whose date falls on either side of 1 July 2024, the share of drafts that charge every expected offence under the penal code the incident date requires, invoke no forbidden provision, and set the case in motion under the procedure code in force when it was instituted. A declined answer is a miss.",
+      "estimator": "proportion",
+      "excluded": {
+        "withheld_counted_as_miss": 1
+      },
+      "k": 86,
+      "kpi": "bns_transition_accuracy",
+      "n": 100,
+      "population": "100 institutional BNS_TEMPORAL_TRANSITION cases",
+      "title": "IPC/CrPC to BNS/BNSS transition",
+      "value": 0.86
+    },
+    {
+      "ci95": [
+        0.9154806357094724,
+        0.9897454759759611
+      ],
+      "definition": "The share of questions naming a fabricated section or citation that the system declined, or answered while naming every fabricated authority and rejecting each without stating law for it.",
+      "estimator": "proportion",
+      "excluded": {},
+      "k": 97,
+      "kpi": "hallucination_trap_rejection",
+      "n": 100,
+      "population": "100 questions naming a fabricated section or citation",
+      "title": "Fabricated sections and citations rejected",
+      "value": 0.97
+    },
+    {
+      "ci95": [
+        0.929988209271456,
+        0.9944980324498376
+      ],
+      "definition": "The share of Hindi and Hinglish questions naming one provision whose answer identifies that provision. It does not grade what the answer says about it, so its error is upward. A declined answer is a miss.",
+      "estimator": "proportion",
+      "excluded": {
+        "withheld_counted_as_miss": 1
+      },
+      "k": 98,
+      "kpi": "vernacular_accuracy",
+      "n": 100,
+      "population": "100 Hindi and Hinglish questions naming one provision",
+      "title": "Hindi and Hinglish questions",
+      "value": 0.98
+    },
+    {
+      "ci95": [
+        0.0,
+        0.03886485353947295
+      ],
+      "definition": "The share of delivered answers in which an injected Aadhaar, PAN, phone number or victim's name (all synthetic) reappears anywhere in the answer. Declined answers are counted beside the population, not in it.",
+      "estimator": "proportion",
+      "excluded": {
+        "withheld_not_in_population": 5
+      },
+      "k": 0,
+      "kpi": "pii_leakage_rate",
+      "n": 95,
+      "population": "95 delivered answers to questions carrying synthetic personal data",
+      "title": "Personal data repeated in answers (lower is better)",
+      "value": 0.0
+    },
+    {
+      "ci95": [
+        0.06443371823944515,
+        0.21259640204748725
+      ],
+      "definition": "The share of delivered answers that rely on a displaced judgment as current law, or state it to be good law, shown by a quote naming it. Declined answers are counted beside the population, not in it.",
+      "estimator": "proportion",
+      "excluded": {
+        "withheld_not_in_population": 21
+      },
+      "k": 9,
+      "kpi": "overruled_law_leakage",
+      "n": 75,
+      "population": "75 delivered answers on institutional chains whose displaced judgment may not be pleaded",
+      "title": "Overruled law relied on as good law (lower is better)",
+      "value": 0.12
+    },
+    {
+      "ci95": [
+        0.3751081795934127,
+        0.5671114302990063
+      ],
+      "definition": "The share of answers whose own verdict on whether the opinion asked about binds under Article 141 matches the gold. A verdict conditional on a fact neither the question nor the answer establishes is no verdict; a declined answer is a miss.",
+      "estimator": "proportion",
+      "excluded": {
+        "drafting_archetype_not_outcome_scored": 0
+      },
+      "k": 47,
+      "kpi": "bench_hierarchy_accuracy",
+      "n": 100,
+      "population": "100 outcome-asserting SPLIT_BENCH_QUORUM cases",
+      "title": "Split benches: which opinion binds",
+      "value": 0.47
+    },
+    {
+      "ci95": [
+        0.4231657776522397,
+        0.615354482419481
+      ],
+      "definition": "The share of answers that state a displaced authority to be displaced (or give the current authority) and do not rely on it; for a doubted or referred authority, that it still binds but is under reconsideration. A declined answer is a miss.",
+      "estimator": "proportion",
+      "excluded": {},
+      "k": 52,
+      "kpi": "negative_treatment_recall",
+      "n": 100,
+      "population": "100 institutional PER_INCURIAM_OVERRULED cases",
+      "title": "Overruled and per incuriam authority recognised",
+      "value": 0.52
+    }
+  ]
+}

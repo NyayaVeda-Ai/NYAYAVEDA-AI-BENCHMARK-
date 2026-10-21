@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or its data, please cite it as below."
+title: "NyayaVeda AI Legal Accuracy Benchmark"
+type: dataset
+authors:
+  - family-names: "Tripathi"
+    given-names: "Abhay"
+    affiliation: "NyayaVeda AI"
+date-released: "2026-10-20"
+version: "2026-10-20"
+url: "https://github.com/NyayaVeda-Ai/NYAYAVEDA-AI-BENCHMARK-"
+keywords:
+  - "Indian law"
+  - "legal AI"
+  - "benchmark"
+  - "Bharatiya Nyaya Sanhita"
+  - "citation verification"

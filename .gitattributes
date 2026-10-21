@@ -1,0 +1,4 @@
+# Every text file is checked out with LF line endings on every platform, so `sha256sum -c
+# SHA256SUMS` in a run folder verifies on Windows as it does elsewhere.
+* text=auto eol=lf
+*.pdf binary
