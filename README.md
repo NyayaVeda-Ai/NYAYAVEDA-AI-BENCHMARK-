@@ -85,6 +85,10 @@ runs/
 
 NyayaVeda AI does not publish comparisons against named competitors. The benchmark is system-agnostic: any legal AI can be evaluated on the same questions with the same rubric. If you evaluate another system and publish the results, please follow [METHODOLOGY.md](METHODOLOGY.md) without modification so the results are comparable.
 
+## License
+
+The questions, answers, grades, scores and documents in this repository are licensed under the [Creative Commons Attribution 4.0 International licence](LICENSE) (CC BY 4.0): you may share and adapt them, including commercially, if you credit "NyayaVeda AI Legal Accuracy Benchmark, 20 October 2026". The law itself is not ours to license: Indian judgments and statutes are Government works (s.17(d) and s.52(1)(q) of the Copyright Act, 1957), and the attribution conditions of the corpus sources in [NOTICE.md](NOTICE.md) continue to apply.
+
 ## Citation
 
 If you use this benchmark in research, please cite:
